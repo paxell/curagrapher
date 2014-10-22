@@ -11,7 +11,7 @@
 <?php
 
 // Create connection
-$con=mysqli_connect("localhost","pax","JRqThV6UrPvjTNTv","photo_manager");
+$con = mysqli_connect("localhost","pax","JRqThV6UrPvjTNTv","photo_manager");
 
 // Check connection
 if (mysqli_connect_errno()) {
@@ -30,21 +30,25 @@ if ($_FILES["file"]["error"] > 0) {
 	$loc = mysqli_real_escape_string($con, $_POST["location"]);
 	$tag = mysqli_real_escape_string($con, $_POST["tag"]);
 
-
 	$sql = "INSERT INTO Image (File, Location)
 		VALUES ('$src', '$loc')";
-
+		 
+	$ret = mysqli_query($con,$sql);
+		 
 	$id = mysqli_insert_id($con);
-
+		 
 	$sql2 = "INSERT INTO Tag (Name, ImageID)
 		VALUES ('$tag', '$id')";
-
-	if (!mysqli_query($con,$sql) || !mysqli_query($con,$sql2)) {
-	  die('Error: ' . mysqli_error($con));
+		 
+	$ret2 = mysqli_query($con,$sql2);
+		
+	if (!$ret || !$ret2) {
+		die('Error: ' . mysqli_error($con));
 	}
+
 	echo "1 record added";
-	}
 
+}
 
 mysqli_close($con);
 
