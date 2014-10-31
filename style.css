@@ -1,3 +1,73 @@
-label, input {
+html, body, ul, ul li,
+h1, h2, h3, p {
+	padding:0;
+	margin:0;
+}
+body, textarea, input, label {
+	font-size:1em;
+	line-height:1.4em;
+	font-family: 'Merriweather', serif;
+}
+h2, h3, header, legend, input[type=submit], .highlight {
+	font-family: 'PT Sans', sans-serif;
+	font-weight:700;
+}
+header {
+	background:#155796;
+	position:fixed;
+	top:0;
+	width:100%;
+	color:#fff;
+}
+.inner, form {
+	margin:0 auto;
+	width:90%;
+}
+.inner {
+	max-width:1300px;
+}
+header .inner {
+	padding:0.4em;
+}
+legend {
+	font-size:1.3em;
+	text-align:right;
+}
+form {
+	max-width:600px;
+	margin-top:4em;
+}
+fieldset {
+	padding:0.8em;
+	border:none;
+	border-top:2px solid #66affb;
+}
+label, input, select {
 	display:block;
+}
+label {
+	font-style:italic;
+	margin-bottom:0.2em;
+}
+input[type=text], select {
+	margin-bottom:0.6em;
+}
+input[type=text] {
+	width:98%;
+	border:0;
+	border-bottom:1px solid #155796;
+	font-size:1em;
+	padding:0.4em;
+}
+input[type=submit] {
+	padding:0.4em 1em;
+	border:2px solid #66affb;
+	background:#66affb;
+	border-radius:6px;
+	text-align:right;
+	float:right;
+}
+input[type=submit]:hover {
+	background:#fff;
+	cursor:pointer;
 }
